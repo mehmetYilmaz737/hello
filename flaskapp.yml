@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+spec:
+  selector:
+    matchLabels:
+      app: hello-world
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-world
+        image: http://10.60.1.202:5000/hello-world
+        ports:
+        - containerPort: 81
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-service
+spec:
+  selector:
+    app: hello-world
+  type: NodePort
+  ports:
+  - protocol: "TCP"
+    port: 81
+    targetPort: 81
+    nodePort: 30000
