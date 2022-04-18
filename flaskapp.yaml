@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: http://10.60.1.202:5000/hello-world
+        image: http://10.60.1.202:5000/hello-world:latest
         ports:
         - containerPort: 81
 ---
