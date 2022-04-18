@@ -1,7 +1,7 @@
 node {
     checkout scm
 
-    docker.withRegistry('https://10.60.1.202:5000',"docker") {
+    docker.withRegistry('https://10.60.1.202:5000') {
         
 
         def customImage = docker.build("hello-world")
