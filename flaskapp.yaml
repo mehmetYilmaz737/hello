@@ -14,9 +14,11 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: 10.60.1.202:5000/hello-world:latest
+        image: 10.60.1.202:5000/hello-world
         ports:
         - containerPort: 81
+      imagePullSecrets:
+      - name: myregistrykey
 ---
 apiVersion: v1
 kind: Service
