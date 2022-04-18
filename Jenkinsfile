@@ -2,7 +2,7 @@ node {
     checkout scm
 
     docker.withRegistry('https://10.60.1.202:5000') {
-        sh "docker login 10.60.1.202 -u baseadmin -p passwd"
+        
 
         def customImage = docker.build("hello-world:${env.BUILD_ID}")
 
