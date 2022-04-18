@@ -12,8 +12,8 @@ spec:
       labels:
         app: hello-world
     spec:
-      imagePullSecrets:
-      - name: myregistrykey
+      #imagePullSecrets:
+      #- name: myregistrykey
       containers:
       - name: hello-world
         image: 10.60.1.202:5000/hello-world
